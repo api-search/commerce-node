@@ -1,1 +1,2 @@
-# commerce
+## Payments
+A Payments APIs index.
