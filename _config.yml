@@ -1,7 +1,14 @@
-title: APIs.io - Commerce
-url: http://127.0.0.1:4000
+name: APIs.io - Commerce
+description: The APIs that make commerce possible, as well as a number of other related capabilities.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+
+url: https://commerce.apis.io
 
 node: commerce
+
+keywords:
+
+- Commerce
 
 permalink: /:categories/:year/:month/:day/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
