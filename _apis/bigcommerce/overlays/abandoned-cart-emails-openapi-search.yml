@@ -9,29 +9,23 @@ paths:
     get:
       description: An array of abandoned cart emails pertaining to a store.
       tags:
-        - Get
-        - All
         - Abandoned
-        - Cart
+        - Carts
         - Email
-        - Templates
-        - Marketing
-        - Abandoned
-        - Cart
         - Emails
+        - Marketing
+        - Templates
       summary: Get all abandoned cart email templates
     post:
       summary: Create abandoned cart email template
       tags:
+        - Abandoned
+        - Carts
         - Create
-        - Abandoned
-        - Cart
         - Email
-        - Template
-        - Marketing
-        - Abandoned
-        - Cart
         - Emails
+        - Marketing
+        - Templates
       description: Create an Abandoned Cart Email template.
     parameters:
       - null
@@ -40,38 +34,28 @@ paths:
       summary: Get an email template
       description: Get a single Abandoned Cart Email template.
       tags:
-        - Get
-        - An
-        - Email
-        - Template
-        - Marketing
         - Abandoned
-        - Cart
+        - Carts
+        - Email
         - Emails
-        - Id
+        - Marketing
+        - Templates
     put:
       summary: Update an email template
       description: Update an email template.
       tags:
-        - Update
-        - An
-        - Email
-        - Template
-        - Marketing
         - Abandoned
-        - Cart
+        - Carts
         - Emails
-        - Id
+        - Marketing
+        - Templates
     delete:
       tags:
-        - Delete
-        - Email
-        - Template
-        - Marketing
         - Abandoned
-        - Cart
+        - Carts
         - Emails
-        - Id
+        - Marketing
+        - Templates
       description: Delete Abandoned Cart Email template.
       summary: Delete email template
     parameters:
@@ -82,48 +66,37 @@ paths:
       summary: Get default email template
       description: Return default Abandoned Cart Email template.
       tags:
-        - Get
+        - Abandoned
+        - Carts
         - Default
         - Email
-        - Template
-        - Marketing
-        - Abandoned
-        - Cart
         - Emails
-        - Id
-        - Default
+        - Marketing
+        - Templates
     parameters:
       - null
   /marketing/abandoned-cart-emails/settings:
     get:
       summary: Get email template settings
       tags:
-        - Get
-        - Email
-        - Template
-        - Settings
-        - Marketing
         - Abandoned
-        - Cart
+        - Carts
+        - Email
         - Emails
-        - Id
-        - Default
+        - Marketing
         - Settings
+        - Templates
       description: Read Abandoned Cart Email Template settings.
     put:
       summary: Update email template settings
       tags:
-        - Update
-        - Email
-        - Template
-        - Settings
-        - Marketing
         - Abandoned
-        - Cart
+        - Carts
+        - Email
         - Emails
-        - Id
-        - Default
+        - Marketing
         - Settings
+        - Templates
       description: Update Abandoned Cart Email template settings.
     parameters:
       - null
