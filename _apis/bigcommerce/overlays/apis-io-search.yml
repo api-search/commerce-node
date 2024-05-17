@@ -13,14 +13,66 @@ specificationVersion: '0.16'
 tags: []
 apis:
   - aid: bigcommerce:abandoned-cart-emails
-    name: Abandoned Cart Emails
+    name: BigCommerce Abandoned Cart Emails API
     description: Needs a description
-    tags: []
+    tags:
+      - 'Abandoned '
+      - 'Carts '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Create '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Default '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Settings '
+      - 'Templates '
+      - 'Abandoned '
+      - 'Carts '
+      - 'Email '
+      - 'Emails '
+      - 'Marketing '
+      - 'Settings '
+      - 'Templates '
     overlays:
       - type: APIs.io Search
         url: overlays/abandoned-cart-emails-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/abandoned-cart-emails-openapi-api-evangelist-ratings.yml
+    humanURL: https://developer.bigcommerce.com/docs/rest-management/abandoned-carts
+    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:abandoned-carts
     name: Abandoned Carts
     description: Needs a description
