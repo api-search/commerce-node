@@ -159,22 +159,48 @@ apis:
     humanURL: https://developer.bigcommerce.com/docs/rest-catalog/brands
   - aid: bigcommerce:storefront-carts
     name: BigCommerce Storefront Carts API
-    description: Needs a description
-    tags: []
+    description: >-
+      Handle cart operations and data for BigCommerce-hosted storefronts using
+      the BigCommerce APIs. For headless storefronts, utilize the GraphQL
+      Storefront API. The REST Storefront API utilizes CORS headers for
+      authentication, eliminating the need for any specific scopes. No
+      BigCommerce-specific tokens are necessary to be included in requests made
+      to these endpoints.
+    tags:
+      - Carts
+      - Currencies
+      - Items
+      - Line
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/storefront-carts-openapi-api-evangelist-ratings.yml
+    humanURL: https://developer.bigcommerce.com/docs/rest-storefront/carts
   - aid: bigcommerce:carts
     name: BigCommerce Carts API
-    description: Needs a description
-    tags: []
+    description: >-
+      Utilize BigCommerce's cart functionality to establish and maintain a cart
+      system within your API, as well as effortlessly manage any settings
+      pertaining to carts.
+    tags:
+      - Carts
+      - Channels
+      - Customers
+      - Global
+      - Items
+      - Line
+      - Metafields
+      - Multiple
+      - Redirects
+      - Settings
+      - URL
     overlays:
       - type: APIs.io Search
         url: overlays/carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/carts-openapi-api-evangelist-ratings.yml
+    humanURL: https://developer.bigcommerce.com/docs/rest-management/carts
   - aid: bigcommerce:catalog-categories
     name: BigCommerce Catalog Categories API
     description: Needs a description
