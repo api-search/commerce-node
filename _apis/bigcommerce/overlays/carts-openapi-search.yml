@@ -15,64 +15,55 @@ paths:
       - null
     post:
       description: >-
-        Creates a **Cart**. 
+        This API endpoint generates a **Cart** with the following required
+        fields:
 
 
-        **Required Fields**
+        - `line_item`: Specifies a line item.
+
+        - `custom_items`: Specifies a custom item. Only required if adding a
+        custom item to the cart.
+
+        - `gift_certificates`: Specifies a gift certificate. Only required if
+        adding a gift certificate to the cart.
 
 
-        |Field|Details|
-
-        |-|-|
-
-        |`line_item`|Specifies a line item.| 
-
-        |`custom_items`|Specifies a custom item. Only required if adding a
-        custom item to the cart.|
-
-        |`gift_certificates`|Specifies a gift certificate. Only required if
-        adding a gift certificate to the cart.|
+        Key points to note:
 
 
-        **Usage Notes**
+        - A unique **cart** `id` (UUID) will be provided in the response.
 
+        - The **cart** `id` is synonymous with a **checkout** `id`.
 
-        * A **cart** `id` (UUID) is returned in the response.
-
-        * A **cart** `id` is the same as a **checkout** `id`.
-
-        * A cart can be created by adding an existing **catalog item** or a
+        - You can create a cart by adding an existing **catalog item** or a
         **custom item**.
 
-        * Carts are valid for **30 days** from the **last modification** (this
-        includes creating the cart or editing the cart).
+        - Carts remain valid for **30 days** from the last modification,
+        including creation or editing.
 
-        * If a product has modifiers, use the `option_selections` array to
-        describe the **modifier** selection(s).
+        - When a product has modifiers, describe the modifier selection(s) using
+        the `option_selections` array.
 
-        * The format and data type of a cart’s `option_value` are defined by the
-        `value_data` object of a product’s [variant option
+        - The data type and format of a cart's `option_value` are determined by
+        the `value_data` object of a product's [variant option
         value](/docs/rest-catalog/product-variant-options/values), [modifier
         value](/docs/rest-catalog/product-modifiers/values), or a combination of
         both.
 
-        * Redirect URLs can only be generated from carts that were created using
-        the **REST Management API**. 
+        - Redirect URLs can only be generated for carts created using the **REST
+        Management API**. 
 
-        * To get cart `redirect_urls` in the response, append the following
-        query parameter to the request URL: `include=redirect_urls`. Redirect
-        URLs point to either a shared checkout domain or a channel-specific
-        domain, depending on the storefront configuration.
+        - Append `include=redirect_urls` to the request URL to receive cart
+        `redirect_urls` in the response, pointing to either a shared checkout
+        domain or a channel-specific domain based on the storefront
+        configuration.
 
-        * To restore a cart that was created by a shopper or through a
-        Storefront API, first recreate the cart using the **REST Management
-        API**.
+        - To restore a cart created by a shopper or through the Storefront API,
+        recreate the cart using the **REST Management API**.
 
-        * To get cart `promotions` in the response, append the following query
-        parameter to the request URL: `include=promotions.banners`.
+        - To view cart `promotions` in the response, add
+        `include=promotions.banners` as a query parameter to the request URL.
       tags:
-        - Create
-        - Cart
         - Carts
       summary: Create a Cart
   /carts/{cartId}/items:
@@ -104,13 +95,9 @@ paths:
         multiple simultaneous requests could result in unexpected and
         inconsistent results.
       tags:
-        - Add
-        - Cart
-        - Line
-        - Items
         - Carts
-        - Id
         - Items
+        - Line
       summary: Add Cart Line Items
   /carts/{cartId}/redirect_urls:
     parameters:
@@ -152,13 +139,9 @@ paths:
         the URL. The `query_params` feature allows passing additional
         information to the redirect URL.
       tags:
-        - Create
-        - Cart
-        - Redirect
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
+        - Redirects
+        - URL
       summary: Create Cart Redirect URL
   /carts/{cartId}/items/{itemId}:
     parameters:
@@ -201,15 +184,9 @@ paths:
         multiple simultaneous requests could result in unexpected and
         inconsistent results.
       tags:
-        - Update
-        - Cart
-        - Line
-        - Item
         - Carts
-        - Id
         - Items
-        - Redirect_urls
-        - Item
+        - Line
       summary: Update Cart Line Item
     delete:
       description: |-
@@ -219,16 +196,10 @@ paths:
 
         Removing the last `line_item` in the *Cart* deletes the *Cart*.
       tags:
-        - Delete
-        - Cart
-        - Line
-        - Item
         - Carts
-        - Id
         - Items
-        - Redirect_urls
-        - Item
-      summary: Delete Cart Line Item
+        - Line
+      summary: 'Delete Cart Line Item '
   /carts/{cartId}:
     parameters:
       - null
@@ -236,13 +207,7 @@ paths:
     get:
       description: Returns a storeʼs *Cart*.
       tags:
-        - Get
-        - Cart
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
       summary: Get a Cart
     put:
       description: >-
@@ -256,24 +221,13 @@ paths:
         calculations on the *Cart*. These are tied to the customer depending on
         cart conditions and any customer groups. 
       tags:
-        - Update
-        - Customer
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
+        - Customers
       summary: Update Customer ID
     delete:
       description: Deletes a *Cart*. Once a *Cart* has been deleted it can’t be recovered.
       tags:
-        - Delete
-        - Cart
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
       summary: Delete a Cart
   /carts/settings:
     parameters:
@@ -282,29 +236,15 @@ paths:
       summary: Get Global Cart Settings
       description: Returns the global cart settings of a store.
       tags:
-        - Get
-        - Global
-        - Cart
-        - Settings
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
+        - Global
         - Settings
     put:
       summary: Update Global Cart Settings
       description: Update the global cart settings of a store.
       tags:
-        - Update
-        - Global
-        - Cart
-        - Settings
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
+        - Global
         - Settings
   /carts/settings/channels/{channel_id}:
     parameters:
@@ -314,34 +254,16 @@ paths:
       summary: Get Channel Cart Settings
       description: Returns the per-channel overrides for the cart settings of a store.
       tags:
-        - Get
-        - Channel
-        - Cart
-        - Settings
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
         - Channels
-        - Channel_id
+        - Settings
     put:
-      summary: Update Channel Cart Settings
+      summary: 'Update Channel Cart Settings '
       description: Update the per-channel overrides for the cart settings of a store.
       tags:
-        - Update
-        - Channel
-        - Cart
-        - Settings
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
         - Channels
-        - Channel_id
+        - Settings
   /carts/{cart_id}/metafields:
     parameters:
       - null
@@ -349,35 +271,13 @@ paths:
     get:
       summary: Get Cart Metafields
       tags:
-        - Get
-        - Cart
-        - Metafields
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
       description: Get a cart's metafields.
     post:
       summary: Create a Cart Metafield
       tags:
-        - Create
-        - Cart
-        - Metafield
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
       description: >
         Create a cart `Metafield`. 
@@ -390,56 +290,21 @@ paths:
     get:
       summary: Get a Cart Metafield
       tags:
-        - Get
-        - Cart
-        - Metafield
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
       description: Gets a cart metafield.
     put:
       summary: Update a Cart Metafield
       tags:
-        - Update
-        - Cart
-        - Metafield
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
       description: |
         Update a `Metafield`, by `cart_id`.
     delete:
       summary: Delete a Metafield
       tags:
-        - Delete
-        - Metafield
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
       description: |
         Deletes a `Metafield`.
     parameters:
@@ -450,73 +315,26 @@ paths:
     get:
       summary: Get All Cart Metafields
       tags:
-        - Get
-        - All
-        - Cart
-        - Metafields
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
       description: Get all cart metafields.
     post:
       summary: Create multiple Metafields
       tags:
-        - Create
-        - Multiple
-        - Metafields
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
+        - Multiple
       description: Create multiple metafields.
     put:
       summary: Update multiple Metafields
       tags:
-        - Update
-        - Multiple
-        - Metafields
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
+        - Multiple
       description: Create multiple metafields.
     delete:
       summary: Delete All Metafields
       tags:
-        - Delete
-        - All
-        - Metafields
         - Carts
-        - Id
-        - Items
-        - Redirect_urls
-        - Item
-        - Settings
-        - Channels
-        - Channel_id
-        - Cart_id
         - Metafields
-        - Metafield_id
       description: Delete all cart
