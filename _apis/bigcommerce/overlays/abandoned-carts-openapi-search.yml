@@ -12,25 +12,17 @@ paths:
       summary: Get Global Abandoned Cart Settings
       description: Returns the global abandoned cart settings of a store.
       tags:
-        - Get
-        - Global
-        - Abandoned
-        - Cart
-        - Settings
         - Abandoned
         - Carts
+        - Global
         - Settings
     put:
       summary: Update Global Abandoned Cart Settings
       description: Updates the global abandoned cart settings of a store.
       tags:
-        - Update
-        - Global
-        - Abandoned
-        - Cart
-        - Settings
         - Abandoned
         - Carts
+        - Global
         - Settings
     parameters:
       - null
@@ -41,16 +33,10 @@ paths:
         Returns the per-channel overrides for the abandoned cart settings of a
         store.
       tags:
-        - Get
-        - Channel
-        - Abandoned
-        - Cart
-        - Settings
         - Abandoned
         - Carts
-        - Settings
         - Channels
-        - Channel_id
+        - Settings
     put:
       summary: Update Channel Abandoned Cart Settings
       description: >-
@@ -68,42 +54,25 @@ paths:
         | Information & Settings                       | modify     |
         `store_v2_information`                        |
       tags:
-        - Update
-        - Channel
-        - Abandoned
-        - Cart
-        - Settings
         - Abandoned
         - Carts
-        - Settings
         - Channels
-        - Channel_id
+        - Settings
     parameters:
       - null
       - null
   /abandoned-carts/{token}:
     get:
-      summary: Get an Abandoned Cart
+      summary: 'Get An Abandoned Cart '
       description: >-
-        Returns the `cart_id` corresponding to the abandoned cart `{token}`
-        passed in.
-
-
-        **Usage Notes**:
-
-        * `{token}` is the token in the query string of the abandoned cart link
-        found in abandoned cart email notifications to shoppers
+        This API retrieves the `cart_id` associated with the abandoned cart
+        identified by the `{token}` parameter. To find the `{token}`, refer to
+        the query string in the abandoned cart link provided in email
+        notifications sent to shoppers.
       tags:
-        - Get
-        - An
-        - Abandoned
-        - Cart
         - Abandoned
         - Carts
-        - Settings
-        - Channels
-        - Channel_id
-        - Token
+        - Tokens
     parameters:
       - null
       - null
