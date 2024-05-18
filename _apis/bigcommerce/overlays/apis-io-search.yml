@@ -14,7 +14,9 @@ tags: []
 apis:
   - aid: bigcommerce:abandoned-cart-emails
     name: BigCommerce Abandoned Cart Emails API
-    description: Needs a description
+    description: >-
+      Our Abandoned Cart Emails V3 API enables you to manage and customize
+      Handlebars-based emails for your abandoned cart recovery campaigns.
     tags:
       - 'Abandoned '
       - 'Carts '
@@ -75,13 +77,28 @@ apis:
     baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:abandoned-carts
     name: BigCommerce Abandoned Carts API
-    description: Needs a description
-    tags: []
+    description: >-
+      Utilize the /abandoned-carts/{token} endpoint on headless storefronts to
+      retrieve the cart_id associated with an abandoned cart token. This token
+      is accessed through a link in an abandoned cart email clicked by a
+      shopper. Once the cart_id is obtained, it can be used to access and
+      display cart information to the shopper using the storefront cart or
+      server-to-server cart APIs.
+    tags:
+      - Abandoned
+      - Carts
+      - Channels
+      - Global
+      - Settings
+      - Tokens
     overlays:
       - type: APIs.io Search
         url: overlays/abandoned-carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/abandoned-carts-openapi-api-evangelist-ratings.yml
+    humanURL: >-
+      https://bigcommerce.stoplight.io/docs/api-reference/86a520e30c284-abandoned-carts
+    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:accepted-payment-methods
     name: BigCommerce Accepted Payment Methods API
     description: Needs a description
@@ -91,6 +108,7 @@ apis:
         url: overlays/accepted-payment-methods-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/accepted-payment-methods-openapi-api-evangelist-ratings.yml
+    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:payment-access-token
     name: BigCommerce Payment Access Token API
     description: Needs a description
@@ -100,6 +118,7 @@ apis:
         url: overlays/payment-access-token-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/payment-access-token-openapi-api-evangelist-ratings.yml
+    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:catalog-brands
     name: BigCommerce Catalog Brands API
     description: Needs a description
@@ -109,6 +128,7 @@ apis:
         url: overlays/catalog-brands-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/catalog-brands-openapi-api-evangelist-ratings.yml
+    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:storefront-carts
     name: BigCommerce Storefront Carts API
     description: Needs a description
