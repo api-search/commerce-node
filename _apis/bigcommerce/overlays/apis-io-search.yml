@@ -101,34 +101,62 @@ apis:
     baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:accepted-payment-methods
     name: BigCommerce Accepted Payment Methods API
-    description: Needs a description
-    tags: []
+    description: >-
+      The  accepted payment methods endpoint retrieves data on the payment
+      methods supported by each configured payment gateway. This information
+      enhances the chances of successfully processing payment requests, by
+      enabling you to avoid errors caused by unsupported payment methods,
+      without the need for unnecessary API calls to the gateway before
+      initiating the payment.
+    tags:
+      - Accepted
+      - Methods
+      - Payments
     overlays:
       - type: APIs.io Search
         url: overlays/accepted-payment-methods-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/accepted-payment-methods-openapi-api-evangelist-ratings.yml
     baseURL: https://api.bigcommerce.com
+    humanURL: https://developer.bigcommerce.com/docs/rest-payments/methods
   - aid: bigcommerce:payment-access-token
     name: BigCommerce Payment Access Token API
-    description: Needs a description
-    tags: []
+    description: >-
+      Implement a feature that allows shoppers to sign in once to access
+      multiple BigCommerce hosted storefronts.
+    tags:
+      - Access
+      - Payments
+      - Tokens
     overlays:
       - type: APIs.io Search
         url: overlays/payment-access-token-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/payment-access-token-openapi-api-evangelist-ratings.yml
     baseURL: https://api.bigcommerce.com
+    humanURL: https://developer.bigcommerce.com/docs/rest-authentication/customer-login
   - aid: bigcommerce:catalog-brands
     name: BigCommerce Catalog Brands API
-    description: Needs a description
-    tags: []
+    description: >-
+      The Catalog Brands endpoints allow you to manage individual brands
+      associated with a store's products. You can create, modify, and delete
+      brands, as well as upload and remove brand images using dedicated
+      endpoints. Brands also have metafields that allow you to store information
+      in key-value pairs. You can learn more about creating, updating, and
+      deleting brand metafields.
+    tags:
+      - Brands
+      - Catalog
+      - Images
+      - Metafields
+      - Multiple
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-brands-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/catalog-brands-openapi-api-evangelist-ratings.yml
     baseURL: https://api.bigcommerce.com
+    humanURL: https://developer.bigcommerce.com/docs/rest-catalog/brands
   - aid: bigcommerce:storefront-carts
     name: BigCommerce Storefront Carts API
     description: Needs a description
