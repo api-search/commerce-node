@@ -74,7 +74,7 @@ apis:
     humanURL: https://developer.bigcommerce.com/docs/rest-management/abandoned-carts
     baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:abandoned-carts
-    name: Abandoned Carts
+    name: BigCommerce Abandoned Carts API
     description: Needs a description
     tags: []
     overlays:
@@ -83,7 +83,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/abandoned-carts-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:accepted-payment-methods
-    name: Accepted Payment Methods
+    name: BigCommerce Accepted Payment Methods API
     description: Needs a description
     tags: []
     overlays:
@@ -92,7 +92,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/accepted-payment-methods-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:payment-access-token
-    name: Payment Access Token
+    name: BigCommerce Payment Access Token API
     description: Needs a description
     tags: []
     overlays:
@@ -101,7 +101,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/payment-access-token-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:catalog-brands
-    name: Catalog - Brands
+    name: BigCommerce Catalog Brands API
     description: Needs a description
     tags: []
     overlays:
@@ -110,7 +110,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/catalog-brands-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:storefront-carts
-    name: Storefront Carts
+    name: BigCommerce Storefront Carts API
     description: Needs a description
     tags: []
     overlays:
@@ -119,7 +119,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/storefront-carts-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:carts
-    name: Carts
+    name: BigCommerce Carts API
     description: Needs a description
     tags: []
     overlays:
@@ -128,7 +128,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/carts-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:catalog-categories
-    name: Catalog - Categories
+    name: BigCommerce Catalog Categories API
     description: Needs a description
     tags: []
     overlays:
@@ -137,7 +137,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/catalog-categories-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:catalog-category-trees
-    name: Catalog - Category Trees
+    name: BigCommerce Catalog Category Trees API
     description: Needs a description
     tags: []
     overlays:
@@ -146,7 +146,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/catalog-category-trees-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:channels
-    name: Channels
+    name: BigCommerce Channels API
     description: Needs a description
     tags: []
     overlays:
@@ -155,7 +155,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/channels-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:storefront-checkouts
-    name: Storefront Checkouts
+    name: BigCommerce Storefront Checkouts API
     description: Needs a description
     tags: []
     overlays:
