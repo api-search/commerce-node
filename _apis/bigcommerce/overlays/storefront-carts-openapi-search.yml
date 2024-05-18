@@ -9,8 +9,6 @@ paths:
   /carts:
     get:
       tags:
-        - Get
-        - Cart
         - Carts
       summary: Get a Cart
       description: >-
@@ -25,8 +23,6 @@ paths:
         endpoint.  
     post:
       tags:
-        - Create
-        - Cart
         - Carts
       summary: Create a Cart
       description: >-
@@ -42,10 +38,7 @@ paths:
   /carts/{cartId}:
     delete:
       tags:
-        - Delete
-        - Cart
         - Carts
-        - Id
       summary: Delete a Cart
       description: >-
         Deletes a *Cart*. Once a *Cart* has been deleted it can not be
@@ -62,13 +55,9 @@ paths:
   /carts/{cartId}/items:
     post:
       tags:
-        - Add
-        - Cart
-        - Line
-        - Items
         - Carts
-        - Id
         - Items
+        - Line
       summary: Add Cart Line Items
       description: >-
         Adds a line items to the *Cart*.
@@ -87,14 +76,9 @@ paths:
   /carts/{cartId}/items/{itemId}:
     put:
       tags:
-        - Update
-        - Cart
-        - Line
-        - Item
         - Carts
-        - Id
         - Items
-        - Item
+        - Line
       summary: Update Cart Line Item
       description: >-
         Updates a *Cart* line item. Updates an existing, single line item
@@ -125,14 +109,9 @@ paths:
         inconsistent results.
     delete:
       tags:
-        - Delete
-        - Cart
-        - Line
-        - Item
         - Carts
-        - Id
         - Items
-        - Item
+        - Line
       summary: Delete Cart Line Item
       description: >-
         Deletes a *Cart* line item.
@@ -150,14 +129,8 @@ paths:
   /carts/{cartId}/currency:
     post:
       tags:
-        - Update
-        - Cart
-        - Currency
         - Carts
-        - Id
-        - Items
-        - Item
-        - Currency
+        - Currencies
       summary: Update Cart Currency
       description: >-
         Update currency of the *Cart*. 
