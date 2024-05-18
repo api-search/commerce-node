@@ -28,9 +28,6 @@ paths:
         * order_id
       summary: Create Payment Access Token
       tags:
-        - Create
-        - Payment
         - Access
-        - Token
         - Payments
-        - Access_toke
+        - Tokens
