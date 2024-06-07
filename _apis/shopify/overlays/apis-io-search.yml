@@ -19,8 +19,7 @@ apis:
     tags: []
     overlays:
       - type: APIs.io Search
-        url: >-
-          overlays/https://raw.githubusercontent.com/allengrant/shopify_openapi/master/shopify_openapi.yaml-openapi-search.yml
+        url: properties/shopify-openapi-original.yml
     aid: shopify:shopify-rest-api
   - name: Shopify GraphQL API
     description: >-

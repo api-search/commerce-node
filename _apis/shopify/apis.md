@@ -24,8 +24,7 @@ apis:
       - type: Documentation
         url: https://shopify.dev/docs/api/admin-rest
       - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/allengrant/shopify_openapi/master/shopify_openapi.yaml
+        url: properties/shopify-openapi-original.yml
       - type: Libraries
         url: https://shopify.dev/docs/api/admin-rest#client_libraries
       - type: Authentication
