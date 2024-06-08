@@ -1,0 +1,302 @@
+openapi: 3.0.0
+info:
+  title: VTEX ID
+  description: "VTEX ID API provides endpoints to manage user authentication in your VTEX store. Check the [Authentication](https://developers.vtex.com/docs/guides/authentication) guide for more information.\r\n\r\n## Index\r\n\r\n- `POST` [Generate authentication token](https://developers.vtex.com/docs/api-reference/vtex-id-api#post-/api/vtexid/apptoken/login)\r\n- `POST` [Check authenticated user](https://developers.vtex.com/docs/api-reference/vtex-id-api#post-/api/vtexid/credential/validate)\r\n- `POST` [Enable or disable repeated passwords](https://developers.vtex.com/docs/api-reference/vtex-id-api#get-/api/vtexid/pub/providers/setup/password/webstore/password)\r\n- `POST` [Expire user password](https://developers.vtex.com/docs/api-reference/vtex-id-api#post-/api/vtexid/password/expire)"
+  version: '1.0'
+servers:
+  - url: https://{accountName}.{environment}.com.br
+    description: VTEX server URL.
+    variables:
+      accountName:
+        description: Name of the VTEX account. Used as part of the URL.
+        default: apiexamples
+      environment:
+        description: Environment to use. Used as part of the URL.
+        enum:
+          - vtexcommercestable
+        default: vtexcommercestable
+paths:
+  /api/vtexid/apptoken/login:
+    post:
+      tags:
+        - Authentication
+      summary: Generate authentication token
+      description: "Generate a [token](https://developers.vtex.com/vtex-rest-api/docs/getting-started-authentication#user-token) from a given [app key and app token](https://help.vtex.com/en/tutorial/application-keys--2iffYzlvvz4BDMr6WGUtet) pair. You can use this token to authenticate requests to VTEX APIs by sending it as a header named `VtexIdclientAutCookie`. The token's permissions are the same as [defined to the credential pair](https://help.vtex.com/en/tutorial/application-keys--2iffYzlvvz4BDMr6WGUtet#managing-app-key-permissions).\n\r\n\r> Since you are sending the credentials on the request body, there is no need to send authentication headers. \n\r\n\r> It is also possible to make this request using the `https://api.vtexcommercestable.com.br/api/vtexid/apptoken/login?an={accountName}` route, replacing `{accountName}` with your VTEX account name. This is the only case where you need to use the `an` query parameter.\r\n\r\n## Permissions\r\n\r\nThis endpoint does not require [permissions](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3)."
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/an'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/credentials'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authStatus:
+                    type: string
+                    description: Authentication status.
+                  token:
+                    type: string
+                    description: Authentication token.
+                  expires:
+                    type: integer
+                    description: Token expiration time in seconds.
+              example:
+                authStatus: Success
+                token: eyJhbGciOiJFUzI1NiIsImtpZCI6IjFBRjI5MUUwRDY0MERENTlEQTkzRTg0REMxNjQyNjA3ODZEQjY3ODAiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJ2dGV4YXBwa2V5LXZ0ZXhoZWxwLVdWQ0FCVCIsImFjY291bnQiOiJwerV4aGVscCIsImF1ZGllbmNlIjoiYWRtaW4iLCJleHAiOjE2Njk3NzA3MzcsInVzZXJJZCI6IjM5MjNhMmUy5khmMTctNGNiYy04YzU3LWQ3OGFkNmUxYTU2NiIsImlhdCI6MTY2OTc0OTEzNywiaXNzIjoidG9rZW4tZW1HgoRlciIsImp0aSI6IjNiNjAxODA2LTExMzEtNDcwYS05MWJjLTVhM2JhOThiYWQyNiJ9.Q7N8MFa1FMJsQUpxBY29oije4aa-Jf29wgLFLl6LUY3Wei3MRUVUMRQWkey6Kug8iFPonZ1L-PaFmwfzSz3TCQ
+                expires: 1669770737
+  /api/vtexid/audience/webstore/provider/oauth/exchange:
+    post:
+      tags:
+        - Authentication
+      summary: Exchange OAuth access token for VTEX credential
+      description: "If your store uses a headless frontend, you can authenticate users via OAuth and use this endpoint to exchange the OAuth access token for a VTEX authentication token. This VTEX token can be used to authenticate your frontend requests to VTEX APIs.\n\r\n\rLearn more about how to implement [headless authentication](https://developers.vtex.com/docs/guides/headless-authentication) in your store.\r\n\r\n## Permissions\r\n\r\nThis endpoint does not require [permissions](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3)."
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/accountName'
+        - $ref: '#/components/parameters/environment'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - providerId
+                - accessToken
+              properties:
+                providerId:
+                  type: string
+                  description: Name of the [OAuth provider](https://developers.vtex.com/docs/guides/login-integration-guide-webstore-oauth2) set up in your Admin panel.
+                  example: GoogleID
+                accessToken:
+                  type: string
+                  description: Access token obtained from your frontend via OAuth integration corresponding with the indicated `providerId`.
+                  example: dsfDShdgfhDFI1NiIsIrtyZCI6IjFBRjI5MUUwRDY0MERENTlEQTkzRTg0REMxNjQyNjA3ODZEQjY3ODAiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJ2dGV4YXBwa2V5LXZ0ZXhoZWxwLVdWQ0FCVCIsImFjY291bdg465DATU4GVscCIsImF1MBllbmNlIjoiYWRtaW4iLCJleHAiOjE2Njk3NzA3MzcsInVzZXJJZCI6IjM5MjNhMmUy5khmMTctNGNiYy04YzU3LWQ3OGFkNmUxYTU2NiIsImlhdCI6MTY2OTc0OTEzNywiaXNzIjoidG9rZW4tZW1HgoRlciIsImp0aSI6IjNiNjAxODA2LTExMzEtNDcwYS05MWJjLTVhM2JhOThiYWQyNiJ9.Q7N8MFa1FMJsQUpxBY29oije4aa-654fgjLFLl6LUY3Wei3MRUVUMRQWkey6Kug8iFPonZ1L-PaFmwfzSz3TCQ
+                duration:
+                  type: integer
+                  description: Duration of the token that will be returned, in minutes.
+                  example: 90
+                  default: 60
+      responses:
+        '200':
+          description: 200 - OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authToken:
+                    type: string
+                    description: Authentication token. Use this token to authenticate your requests to VTEX APIs.
+              example:
+                authToken: eyJhbGciOiJFUzI1NiIsIrtyZCI6IjFBRjI5MUUwRDY0MERENTlEQTkzRTg0REMxNjQyNjA3ODZEQjY3ODAiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJ2dGV4YXBwa2V5LXZ0ZXhoZWxwLVdWQ0FCVCIsImFjY291bnQiOiJwerV4aGVscCIsImF1MBllbmNlIjoiYWRtaW4iLCJleHAiOjE2Njk3NzA3MzcsInVzZXJJZCI6IjM5MjNhMmUy5khmMTctNGNiYy04YzU3LWQ3OGFkNmUxYTU2NiIsImlhdCI6MTY2OTc0OTEzNywiaXNzIjoidG9rZW4tZW1HgoRlciIsImp0aSI6IjNiNjAxODA2LTExMzEtNDcwYS05MWJjLTVhM2JhOThiYWQyNiJ9.Q7N8MFa1FMJsQUpxBY29oije4aa-Jf463lwgLFLl6LUY3Wei3MRUVUMRQWkey6Kug8iFPonZ1L-PaFmwfzSz3TCQ
+  /api/vtexid/credential/validate:
+    post:
+      tags:
+        - Authentication
+      summary: Check authenticated user
+      description: "Retrieves information about the user who is currently authenticated in your store, given an user token. If the user is not authenticated, the response for this API will be `401 (Unauthorized)`.\r\n\r\n## Permissions\r\n\r\nThis endpoint does not require [permissions](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3)."
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/an'
+        - $ref: '#/components/parameters/environment'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Request body object.
+              required:
+                - token
+              properties:
+                token:
+                  description: Value of the `VtexIdclientAutCookie`, [user token](https://developers.vtex.com/docs/guides/api-authentication-using-user-tokens), valid for 24 hours.
+                  type: string
+                  example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authStatus:
+                    type: string
+                    description: Authentication status.
+                  id:
+                    type: string
+                    description: Unique identifier of the user within VTEX services.
+                  user:
+                    type: string
+                    description: User email.
+                  account:
+                    type: string
+                    description: VTEX account name.
+                  audience:
+                    type: string
+                    description: Type of user.
+                  tokenType:
+                    type: string
+                    description: Type of token.
+              example:
+                authStatus: Success
+                id: 1f6c17e5-06f9-44a9-a459-b3686e03fa9d
+                user: john@mail.com
+                account: apiexamples
+                audience: admin
+                tokenType: user
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Response body object.
+                properties:
+                  authStatus:
+                    type: string
+                    description: Authentication status.
+              example:
+                authStatus: WrongCredentials
+      deprecated: false
+  /api/vtexid/pub/providers/setup/password/webstore/password:
+    post:
+      tags:
+        - Authentication
+      summary: Enable or disable repeated passwords
+      description: "Defines if user passwords can be repeated in your store. \r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/authentication-overview#application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| VTEX ID | Identity Providers | **Write Identity Providers** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.\r\nTo learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication-overview#machine-authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/accountName'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isActive:
+                  type: boolean
+                  description: Defines if password access is active (`true`) or not (`false`).
+                  example: true
+                allowRepeated:
+                  type: boolean
+                  description: Defines if passwords can be repeated (`true`) or not (`false`).
+                  example: false
+      responses:
+        '200':
+          description: OK
+  /api/vtexid/password/expire:
+    post:
+      tags:
+        - Authentication
+      summary: Expire user password
+      description: "Expires an user's password in your store.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/authentication-overview#application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| VTEX ID | User Management | **Expire User Password** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.\r\nTo learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication-overview#machine-authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/accountName'
+        - $ref: '#/components/parameters/environment'
+        - name: email
+          in: query
+          description: User email.
+          required: true
+          schema:
+            type: string
+            example: email@email.com
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    Content-Type:
+      name: Content-Type
+      in: header
+      description: Type of the content being sent.
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/json
+    Accept:
+      name: Accept
+      in: header
+      description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/json
+    an:
+      name: an
+      in: query
+      description: Name of your VTEX account.
+      required: false
+      style: form
+      schema:
+        type: string
+        example: exampleAccount
+    accountName:
+      name: accountName
+      in: path
+      required: true
+      description: Name of your VTEX account.
+      schema:
+        type: string
+        example: apiexamples
+    environment:
+      name: environment
+      in: path
+      required: true
+      description: Environment to be used in the request.
+      schema:
+        type: string
+        default: vtexcommercestable
+  schemas:
+    credentials:
+      type: object
+      description: Credentials object, composed of application key and application token.
+      required:
+        - appkey
+        - apptoken
+      properties:
+        appkey:
+          type: string
+          description: Application key.
+          example: vtexappkey-example-YSWQFZ
+        apptoken:
+          type: string
+          description: Application token corresponding to the application key sent with it.
+          example: eyJhbGciOiJFUzI1NiIsImtpZCI6IjA1MTZFN0IwMDNFODMxRTg0QkFDOTg2NzBCNUM2QTRERTlBN0RFNkUiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJwZWRyby5jb3N0YUB2dGV4LmNvbS5iciIsImFjY291bnQiOiJhcHBsaWFuY2V0aGVtZSIsImF1ZGllbmNlIjoiYWRtaW4iLCJzZXNzIjoiZjU3YjMyMGItMWE3YS00YzlkLWJkNDMtZTE4NDdhYmE1MTE1IiwiZXhwIjoxNjE2NzY3Mjc4LCJ1c2VySWQiOiJmYjU0MmU1MS01NDg4LTRjMzQtOGQxNy1lZDhmY2Y1OTdhOTQiLCJpYXQiOjE2MwerY2ODA4NzgsImlzcyI6InRva2VuLWVtaXR0ZXIiLCJqdGkiOiJmYTI0YWJiOC03Y2E5LTQ3NjUtYmYzNC1kMmvU5YTgzYjYxZmUifQ.23rn-2dEdAAYXJX2exrxDEdbieyKWsVKABeSUNeFWyhz7xRd7d5EcxwiMLjM3bRaBOKrAA9Op7ocn89c45qQ
+  securitySchemes:
+    appKey:
+      type: apiKey
+      in: header
+      name: X-VTEX-API-AppKey
+      description: Unique identifier of the [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys).
+    appToken:
+      type: apiKey
+      in: header
+      name: X-VTEX-API-AppToken
+      description: Secret token of the [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys).
+    VtexIdclientAutCookie:
+      type: apiKey
+      in: header
+      name: VtexIdclientAutCookie
+      description: '[User token](https://developers.vtex.com/docs/guides/api-authentication-using-user-tokens), valid for 24 hours.'
+tags:
+  - name: Authentication
+security:
+  - appKey: []
+    appToken: []
+  - VtexIdclientAutCookie: []

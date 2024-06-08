@@ -1,0 +1,769 @@
+openapi: 3.0.0
+info:
+  title: Promotions & Taxes API v2
+  description: "Check the new [Promotions onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/promotions-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Promotions and is organized by focusing on the developer's journey.\r\n\r\n The Promotions & Taxes API allows you to manage and retrieve all coupons from your VTEX store.\r\n\r\n ## Index\r\n\r\n ### Coupons \r\n- `GET` [Get coupons](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon)\r\n- `GET` [Get archived coupons](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon/group/archived)\r\n- `GET` [Get coupon batch information](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon/group/-groupingKey-)\r\n- `PUT` [Edit coupon batch configuration](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#put-/api/rnb/v2/pvt/coupon/group/-groupingKey-)\r\n- `GET` [Get coupon batch codes](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon/group/-groupingKey-/codes)\r\n- `PUT` [Archive a coupon batch](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#put-/api/rnb/v2/pvt/coupon/group/-groupingKey-/archive)\r\n- `POST` [Create coupon batches](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#post-/api/rnb/v2/pvt/coupon/group)\r\n- `PUT` [Unarchive a coupon batch](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#put-/api/rnb/v2/pvt/coupon/group/-groupingKey-/unarchive)\r\n- `GET` [Get usage count for a single coupon](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon/usage-count/-couponCode-)\r\n- `GET` [Get usage count for a coupon batch](https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api-v2#get-/api/rnb/v2/pvt/coupon/usage-count/group/-groupingKey-)\r\n\n## Common parameters in the documentation\r\n\r\n| Parameter name            | Description                                                                             |\r\n|---------------------------|-----------------------------------------------------------------------------------------|\r\n| `{{accountName}}`         | Store account name.                                                                      |\r\n| `{{environment}}`         | The environment that will be called.                                                    |\r\n| `{{X-VTEX-API-AppKey}}`   | Located in the headers of the requests, user authentication key.                        |\r\n| `{{X-VTEX-API-AppToken}}` | Located in the headers of the requests, authentication password.                        |\r\n"
+  contact: {}
+  version: '1.0'
+servers:
+  - url: https://{accountName}.{environment}.com.br
+    description: VTEX server URL
+    variables:
+      accountName:
+        description: Name of the VTEX account. Used as part of the URL.
+        default: apiexamples
+      environment:
+        description: Environment to use. Used as part of the URL.
+        enum:
+          - vtexcommercestable
+        default: vtexcommercestable
+paths:
+  /api/rnb/v2/pvt/coupon:
+    get:
+      tags:
+        - Coupons
+      summary: Get coupons
+      operationId: Getgroupedcoupons
+      description: "Retrieves the list of all active coupons.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getcoupons'
+              example:
+                items:
+                  - grouping:
+                      key: rewardsprogram
+                      amount: 1000
+                    configuration:
+                      lastModifiedUtc: '2022-04-20T20:07:03.5066878Z'
+                      utmSource: fb
+                      utmCampaign: rewards
+                      isArchived: false
+                      maxItemsPerClient: 0
+                      expirationIntervalPerUse: '00:00:00'
+                      maxUsage: 3
+                      groupingKey: rewardsprogram
+                pagination:
+                  page: 0
+                  pageSize: 10
+                  total: 10
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group/archived:
+    get:
+      tags:
+        - Coupons
+      summary: Get archived coupons
+      operationId: Getgroupedarchivedcoupons
+      description: "Retrieves the list of all archived coupons.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getcoupons'
+              example:
+                items:
+                  - grouping:
+                      key: rewardsprogram
+                      amount: 1000
+                    configuration:
+                      lastModifiedUtc: '2022-04-20T20:07:03.5066878Z'
+                      utmSource: fb
+                      utmCampaign: rewards
+                      isArchived: true
+                      maxItemsPerClient: 0
+                      expirationIntervalPerUse: '00:00:00'
+                      maxUsage: 3
+                      groupingKey: rewardsprogram
+                pagination:
+                  page: 0
+                  pageSize: 10
+                  total: 10
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group/{groupingKey}:
+    get:
+      tags:
+        - Coupons
+      summary: Get coupon batch information
+      description: "Retrieves information from a specific coupon batch based on its `groupingKey`.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Getcoupongroupinformation
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: promo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: Coupon batch information.
+                type: object
+                properties:
+                  configuration:
+                    title: configuration
+                    description: Object containing the coupon's properties.
+                    type: object
+                    properties:
+                      lastModifiedUtc:
+                        title: lastModifiedUtc
+                        description: Date when the coupon was modified for the last time, in the UTC format.
+                        type: string
+                      utmSource:
+                        title: utmSource
+                        description: UTM source related to the coupon, which indicates the source of the traffic, that is, from which site, advertiser, or publication the user came from.
+                        type: string
+                      utmCampaign:
+                        title: utmCampaign
+                        description: UTM campaign related to the coupon, which indicates the campaign that defines a particular marketing context.
+                        type: string
+                      isArchived:
+                        title: isArchived
+                        description: Determines whether the coupon is archived (`true`) or not (`false`).
+                        type: boolean
+                      maxItemsPerClient:
+                        title: maxItemsPerClient
+                        description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of Coupons. When enabled, it determines the maximum amount of products to which the coupon can be applied. The defined quantity is valid for one or more purchases by the same customer.
+                        type: number
+                      expirationIntervalPerUse:
+                        title: expirationIntervalPerUse
+                        description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of the Coupons module. When enabled, it determines how many days after purchase the coupon will be available for use again.
+                        type: string
+                      maxUsage:
+                        title: maxUsage
+                        description: The maximum number of times the coupon can be used, if the coupon has limited usage.
+                        type: number
+                      groupingKey:
+                        title: groupingKey
+                        description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+                        type: string
+                  grouping:
+                    title: grouping
+                    description: Coupon batch.
+                    type: object
+                    properties:
+                      key:
+                        title: key
+                        description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+                        type: string
+                      amount:
+                        title: amount
+                        description: Amount of codes in the coupon batch.
+                        type: number
+              example:
+                configuration:
+                  lastModifiedUtc: '2022-02-15T19:18:28.6409703Z'
+                  utmSource: fb
+                  utmCampaign: rewards
+                  isArchived: false
+                  maxItemsPerClient: 13
+                  expirationIntervalPerUse: '00:00:00'
+                  maxUsage: 11
+                  groupingKey: '12130984756'
+                grouping:
+                  key: '12130984756'
+                  amount: 5
+      deprecated: false
+    put:
+      tags:
+        - Coupons
+      summary: Edit coupon batch configuration
+      description: "Changes information from a specific coupon batch configuration based on its `groupingKey`.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Editcoupongroupconfiguration
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: promo
+      requestBody:
+        description: Request body to edit coupon batch configuration information.
+        content:
+          application/json:
+            schema:
+              title: Editcoupongroupconfiguration
+              required:
+                - isArchived
+                - maxUsage
+              type: object
+              properties:
+                utmSource:
+                  title: utmSource
+                  description: UTM source related to the coupon, which indicates the source of the traffic, that is, from which site, advertiser, or publication the user came from. It is mandatory to provide either `utmSource` or `utmCampaign`.
+                  type: string
+                  example: fb
+                utmCampaign:
+                  title: utmCampaign
+                  description: UTM campaign related to the coupon, which indicates the campaign that defines a particular marketing context. It is mandatory to provide either `utmSource` or `utmCampaign`.
+                  type: string
+                  example: blackfriday
+                isArchived:
+                  title: isArchived
+                  description: Determines whether the coupon is archived (`true`) or not (`false`).
+                  type: boolean
+                  example: false
+                maxItemsPerClient:
+                  title: maxItemsPerClient
+                  description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of Coupons. When enabled, it determines the maximum amount of products to which the coupon can be applied. The defined quantity is valid for one or more purchases by the same customer.
+                  type: number
+                  example: 0
+                expirationIntervalPerUse:
+                  title: expirationIntervalPerUse
+                  description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of the Coupons module. When enabled, it determines how many days after purchase the coupon will be available for use again.
+                  type: string
+                  example: 14.00:00:00
+                maxUsage:
+                  title: maxUsage
+                  description: The maximum number of times the coupon can be used, if the coupon has limited usage.
+                  type: number
+                  example: 3
+            example:
+              utmSource: source
+              isArchived: false
+              maxItemsPerClient: 0
+              expirationIntervalPerUse: '00:00:00'
+              maxUsage: 4
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                - 12130984756-bbbsqz5lxivwvx7
+                - 12130984756-31xj4idmfbmh9am
+                - 12130984756-pxpdsou99n3bmsn
+                - 12130984756-juzl9asvq8z4sjn
+                - 12130984756-gyo7a2v0s9v7s07
+              schema:
+                type: array
+                description: Array with the coupon batch codes.
+                items:
+                  type: string
+                  description: Coupon code.
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Error message.
+              example: It is not possible to edit an archived coupon group.
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group/{groupingKey}/codes:
+    get:
+      tags:
+        - Coupons
+      summary: Get coupon batch codes
+      description: "Retrieves a specific coupon batch's list of codes.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Getcoupongroupcodes.
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: promo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                - 12130984756-bbbsqz5lxivwvx7
+                - 12130984756-31xj4idmfbmh9am
+                - 12130984756-pxpdsou99n3bmsn
+                - 12130984756-juzl9asvq8z4sjn
+                - 12130984756-gyo7a2v0s9v7s07
+              schema:
+                type: array
+                description: Array with the coupon batch codes.
+                items:
+                  type: string
+                  description: Coupon code.
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Error message.
+              example: Coupon Group Not Found
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group/{groupingKey}/archive:
+    put:
+      tags:
+        - Coupons
+      summary: Archive a coupon batch
+      description: "Archives a coupon batch and its respective codes.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Archivedcoupongroup
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: promo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                description: Number of archived coupons.
+              example: 1
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Error message.
+              example: Coupon Group Not Found
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group:
+    post:
+      tags:
+        - Coupons
+      summary: Create coupon batches
+      description: "Creates one or more coupon batches.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Creategroupsofcoupons
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+      requestBody:
+        description: Request body create coupon batches.
+        content:
+          application/json:
+            schema:
+              type: array
+              description: Array of objects containing coupon batches information.
+              items:
+                required:
+                  - couponConfiguration
+                  - quantity
+                type: object
+                title: CreategroupsofcouponsRequest
+                description: Object containing coupon batch information.
+                properties:
+                  couponConfiguration:
+                    required:
+                      - couponCode
+                      - maxUsage
+                    title: CouponConfiguration
+                    description: Object containing the coupon's properties.
+                    type: object
+                    properties:
+                      utmSource:
+                        title: utmSource
+                        description: UTM source related to the coupon, which indicates the source of the traffic, that is, from which site, advertiser, or publication the user came from. It is mandatory to provide either `utmSource` or `utmCampaign`.
+                        type: string
+                        example: fb
+                      utmCampaign:
+                        title: utmCampaign
+                        description: UTM campaign related to the coupon, which indicates the campaign that defines a particular marketing context. It is mandatory to provide either `utmSource` or `utmCampaign`.
+                        type: string
+                        example: blackfriday
+                      couponCode:
+                        title: couponCode
+                        description: Coupon batch prefix.
+                        type: string
+                        example: rewards10
+                      expirationIntervalPerUse:
+                        title: expirationIntervalPerUse
+                        description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of the Coupons module. When enabled, it determines how many days after purchase the coupon will be available for use again.
+                        type: string
+                        example: 14.00:00:00
+                      maxItemsPerClient:
+                        title: maxItemsPerClient
+                        description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of Coupons. When enabled, it determines the maximum amount of products to which the coupon can be applied. The defined quantity is valid for one or more purchases by the same customer.
+                        type: number
+                        example: 0
+                      maxUsage:
+                        title: maxUsage
+                        description: The maximum number of times the coupon can be used, if the coupon has limited usage.
+                        type: number
+                        example: 3
+                  quantity:
+                    type: string
+                    description: Number of codes to be generated for the coupon batch.
+                    example: '5'
+            example:
+              - couponConfiguration:
+                  utmSource: fb
+                  utmCampaign: blackfriday
+                  couponCode: bf22
+                  expirationIntervalPerUse: '00:00:00'
+                  maxItemsPerClient: 5
+                  maxUsage: 5
+                quantity: '5'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                - bf22-Y0RGX5VRCQU5HRQ
+                - bf22-XZC6SP9WYR1OINC
+                - bf22-DOLD2FF2NNHUGZU
+                - bf22-1E5WFBGOS2MAY9T
+                - bf22-CXK6H29W9K1PI2B
+              schema:
+                type: array
+                items:
+                  type: string
+                  description: Coupon code.
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Error message.
+              example: A list of multiple coupon configurations is required
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/group/{groupingKey}/unarchive:
+    put:
+      tags:
+        - Coupons
+      summary: Unarchive a coupon batch
+      description: "Unarchives a coupon batch and its respective codes.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Unarchivedcoupongroup
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: promo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                description: Number of unarchived coupons.
+              example: 1
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/usage-count/{couponCode}:
+    get:
+      tags:
+        - Coupons
+      summary: Get usage count for a single coupon
+      description: "Returns the number of times a specific single coupon was used, based on its `couponCode`.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Getnumberofusagesofasinglecoupon
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: couponCode
+          in: path
+          description: Single coupon code.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: blackfriday10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                description: Number of times the single coupon was used to place orders.
+              example: 1
+      deprecated: false
+  /api/rnb/v2/pvt/coupon/usage-count/group/{groupingKey}:
+    get:
+      tags:
+        - Coupons
+      summary: Get usage count for a coupon batch
+      description: "Returns the number of times a coupon batch was used, based on its `groupingKey`.\r\n\r\n## Permissions\r\n\r\nAny user or [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys) must have at least one of the appropriate [License Manager resources](https://help.vtex.com/en/tutorial/license-manager-resources--3q6ztrC8YynQf6rdc6euk3) to be able to successfully run this request. Otherwise they will receive a status code `403` error. These are the applicable resources for this endpoint:\r\n\r\n| **Product** | **Category** | **Resource** |\r\n| --------------- | ----------------- | ----------------- |\r\n| Rates and Benefits | Promotions | **Manage benefits and rates** |\r\n\r\nThere are no applicable [predefined roles](https://help.vtex.com/en/tutorial/predefined-roles--jGDurZKJHvHJS13LnO7Dy) for this resource list. You must [create a custom role](https://help.vtex.com/en/tutorial/roles--7HKK5Uau2H6wxE1rH5oRbc#creating-a-role) and add at least one of the resources above in order to use this endpoint.To learn more about machine authentication at VTEX, see [Authentication overview](https://developers.vtex.com/docs/guides/authentication).\r\n\r\n>❗ To prevent integrations from having excessive permissions, consider the [best practices for managing app keys](https://help.vtex.com/en/tutorial/best-practices-application-keys--7b6nD1VMHa49aI5brlOvJm) when assigning License Manager roles to integrations."
+      operationId: Getnumberofusagesofacouponbatch
+      parameters:
+        - name: Content-Type
+          in: header
+          description: Describes the type of the content being sent.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: Accept
+          in: header
+          description: HTTP Client Negotiation _Accept_ Header. Indicates the types of responses the client can understand.
+          required: true
+          style: simple
+          schema:
+            type: string
+            default: application/json
+        - name: groupingKey
+          in: path
+          description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: rewardsprogram
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                description: Number of times the coupon batch was used to place orders.
+              example: 1
+      deprecated: false
+components:
+  schemas:
+    getcoupons:
+      description: List of coupons.
+      type: object
+      properties:
+        items:
+          title: items
+          description: Array of objects.
+          type: array
+          items:
+            description: Object containing each coupon batch and its configuration information.
+            type: object
+            properties:
+              grouping:
+                title: grouping
+                description: Coupon batch.
+                type: object
+                properties:
+                  key:
+                    title: key
+                    description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+                    type: string
+                  amount:
+                    title: amount
+                    description: Amount of codes in the coupon batch.
+                    type: number
+              configuration:
+                title: configuration
+                description: Object containing the coupon's properties.
+                type: object
+                properties:
+                  lastModifiedUtc:
+                    title: lastModifiedUtc
+                    description: Date when the coupon was modified for the last time, in the UTC format.
+                    type: string
+                  utmSource:
+                    title: utmSource
+                    description: UTM source related to the coupon, which indicates the source of the traffic, that is, from which site, advertiser, or publication the user came from.
+                    type: string
+                  utmCampaign:
+                    title: utmCampaign
+                    description: UTM campaign related to the coupon, which indicates the campaign that defines a particular marketing context.
+                    type: string
+                  couponCode:
+                    title: couponCode
+                    description: Single coupon code.
+                    type: string
+                  isArchived:
+                    title: isArchived
+                    description: Determines whether the coupon is archived (`true`) or not (`false`).
+                    type: boolean
+                  maxItemsPerClient:
+                    title: maxItemsPerClient
+                    description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of Coupons. When enabled, it determines the maximum amount of products to which the coupon can be applied. The defined quantity is valid for one or more purchases by the same customer.
+                    type: number
+                  expirationIntervalPerUse:
+                    title: expirationIntervalPerUse
+                    description: This option is non-editable and visible only for existing coupons configured with this limitation in previous versions of the Coupons module. When enabled, it determines how many days after purchase the coupon will be available for use again.
+                    type: string
+                  maxUsage:
+                    title: maxUsage
+                    description: The maximum number of times the coupon can be used, if the coupon has limited usage.
+                    type: number
+                  groupingKey:
+                    title: groupingKey
+                    description: Coupon grouping key, which is the prefix for the coupon batch's generated codes.
+                    type: string
+  securitySchemes:
+    appKey:
+      type: apiKey
+      in: header
+      name: X-VTEX-API-AppKey
+      description: Unique identifier of the [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys).
+    appToken:
+      type: apiKey
+      in: header
+      name: X-VTEX-API-AppToken
+      description: Secret token of the [application key](https://developers.vtex.com/docs/guides/api-authentication-using-application-keys).
+    VtexIdclientAutCookie:
+      type: apiKey
+      in: header
+      name: VtexIdclientAutCookie
+      description: '[User token](https://developers.vtex.com/docs/guides/api-authentication-using-user-tokens), valid for 24 hours.'
+tags:
+  - name: Coupons
+security:
+  - appKey: []
+    appToken: []
+  - VtexIdclientAutCookie: []
