@@ -6,9 +6,10 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/walmart.yml
 created: 2023/11/15
-modified: 2023/11/15
-specificationVersion: '0.16'
-tags: []
+modified: '2024-07-03'
+specificationVersion: '0.18'
+tags:
+  - Commerce
 apis:
   - name: Walmart Marketplace Feeds API
     description: >-
@@ -792,3 +793,4 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: walmart
+score: 845
