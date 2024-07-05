@@ -5,7 +5,7 @@ description: >-
   chain of hypermarkets, discount department stores, and grocery stores in the
   United States, headquartered in Bentonville, Arkansas.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/walmart.yml
+url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/walmart/apis.md
 created: 2023/11/15
 modified: '2024-07-03'
 specificationVersion: '0.18'

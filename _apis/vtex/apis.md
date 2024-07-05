@@ -3,7 +3,7 @@ name: VTex
 description: >-
   VTEX enables brands and retailers to achieve faster time to market, reach their customers across any channel, and uncover new growth areas.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/walmart.yml
+url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/vtex/apis.md
 created: 2024-06-07
 modified: 2024-06-07
 specificationVersion: '0.18'

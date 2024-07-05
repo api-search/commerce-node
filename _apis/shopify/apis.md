@@ -5,7 +5,7 @@ description: >-
   to build online stores or sell products on third-party marketplaces or social
   media platforms. Shopify also sells point-of-sale, or POS, software that small
   businesses can use in their brick-and-mortar stores.
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/shopify.yml
+url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/shopify/apis.md
 created: 2024/04/14
 modified: '2024-07-03'
 specificationVersion: '0.18'

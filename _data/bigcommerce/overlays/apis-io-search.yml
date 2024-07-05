@@ -5,8 +5,7 @@ description: >-
   service services to retailers. The company's platform includes online store
   creation, search engine optimization, hosting, and marketing and security from
   small to Enterprise sized businesses.
-url: >-
-  https://raw.githubusercontent.com/apis-json/artisanal/main/apis/bigcommerce.yml
+url: https://raw.githubusercontent.com/api-search/commerce/main/_data/bigcommerce/overlays/apis-io-search.yml
 created: 2024/04/14
 modified: '2024-07-03'
 specificationVersion: '0.18'
