@@ -1329,7 +1329,7 @@ paths:
   /schedule/{schedule_id}/download_result_file:
     get:
       tags:
-        - Download
+        - Downloads
         - Files
         - Results
         - Schedules
@@ -1931,7 +1931,7 @@ paths:
   /task/{task_id}/download_input_file:
     get:
       tags:
-        - Download
+        - Downloads
         - Files
         - Inputs
         - Tasks
@@ -2020,7 +2020,7 @@ paths:
   /task/{task_id}/download_result_file:
     get:
       tags:
-        - Download
+        - Downloads
         - Files
         - Results
         - Tasks
