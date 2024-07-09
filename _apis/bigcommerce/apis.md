@@ -6,232 +6,196 @@ description: >-
   service services to retailers. The company's platform includes online store
   creation, search engine optimization, hosting, and marketing and security from
   small to Enterprise sized businesses.
-url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/bigcommerce/apis.md
-created: 2024/04/14
-modified: '2024-07-03'
-specificationVersion: '0.18'
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/apis-json/artisanal/main/apis/bigcommerce.yml
+created: 2023/11/21
+modified: 2023/11/21
+specificationVersion: '0.16'
 tags: []
 apis:
   - aid: bigcommerce:abandoned-cart-emails
-    name: BigCommerce Abandoned Cart Emails API
-    description: >-
-      Our Abandoned Cart Emails V3 API enables you to manage and customize
-      Handlebars-based emails for your abandoned cart recovery campaigns.
-    tags:
-      - 'Abandoned '
-      - 'Carts '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Create '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Default '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Settings '
-      - 'Templates '
-      - 'Abandoned '
-      - 'Carts '
-      - 'Email '
-      - 'Emails '
-      - 'Marketing '
-      - 'Settings '
-      - 'Templates '
+    name: Abandoned Cart Emails
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/abandoned-cart-emails-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/abandoned-cart-emails-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/abandoned-cart-emails-openapi-api-evangelist-ratings.yml
-    humanURL: https://developer.bigcommerce.com/docs/rest-management/abandoned-carts
-    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:abandoned-carts
-    name: BigCommerce Abandoned Carts API
-    description: >-
-      Utilize the /abandoned-carts/{token} endpoint on headless storefronts to
-      retrieve the cart_id associated with an abandoned cart token. This token
-      is accessed through a link in an abandoned cart email clicked by a
-      shopper. Once the cart_id is obtained, it can be used to access and
-      display cart information to the shopper using the storefront cart or
-      server-to-server cart APIs.
-    tags:
-      - Abandoned
-      - Carts
-      - Channels
-      - Global
-      - Settings
-      - Tokens
+    name: Abandoned Carts
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/abandoned-carts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/abandoned-carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/abandoned-carts-openapi-api-evangelist-ratings.yml
-    humanURL: >-
-      https://bigcommerce.stoplight.io/docs/api-reference/86a520e30c284-abandoned-carts
-    baseURL: https://api.bigcommerce.com
   - aid: bigcommerce:accepted-payment-methods
-    name: BigCommerce Accepted Payment Methods API
-    description: >-
-      The  accepted payment methods endpoint retrieves data on the payment
-      methods supported by each configured payment gateway. This information
-      enhances the chances of successfully processing payment requests, by
-      enabling you to avoid errors caused by unsupported payment methods,
-      without the need for unnecessary API calls to the gateway before
-      initiating the payment.
-    tags:
-      - Accepted
-      - Methods
-      - Payments
+    name: Accepted Payment Methods
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/accepted-payment-methods-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/accepted-payment-methods-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/accepted-payment-methods-openapi-api-evangelist-ratings.yml
-    baseURL: https://api.bigcommerce.com
-    humanURL: https://developer.bigcommerce.com/docs/rest-payments/methods
   - aid: bigcommerce:payment-access-token
-    name: BigCommerce Payment Access Token API
-    description: >-
-      Implement a feature that allows shoppers to sign in once to access
-      multiple BigCommerce hosted storefronts.
-    tags:
-      - Access
-      - Payments
-      - Tokens
+    name: Payment Access Token
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/payment-access-token-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/payment-access-token-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/payment-access-token-openapi-api-evangelist-ratings.yml
-    baseURL: https://api.bigcommerce.com
-    humanURL: https://developer.bigcommerce.com/docs/rest-authentication/customer-login
   - aid: bigcommerce:catalog-brands
-    name: BigCommerce Catalog Brands API
-    description: >-
-      The Catalog Brands endpoints allow you to manage individual brands
-      associated with a store's products. You can create, modify, and delete
-      brands, as well as upload and remove brand images using dedicated
-      endpoints. Brands also have metafields that allow you to store information
-      in key-value pairs. You can learn more about creating, updating, and
-      deleting brand metafields.
-    tags:
-      - Brands
-      - Catalog
-      - Images
-      - Metafields
-      - Multiple
+    name: Catalog - Brands
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-brands-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-brands-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/catalog-brands-openapi-api-evangelist-ratings.yml
-    baseURL: https://api.bigcommerce.com
-    humanURL: https://developer.bigcommerce.com/docs/rest-catalog/brands
   - aid: bigcommerce:storefront-carts
-    name: BigCommerce Storefront Carts API
-    description: >-
-      Handle cart operations and data for BigCommerce-hosted storefronts using
-      the BigCommerce APIs. For headless storefronts, utilize the GraphQL
-      Storefront API. The REST Storefront API utilizes CORS headers for
-      authentication, eliminating the need for any specific scopes. No
-      BigCommerce-specific tokens are necessary to be included in requests made
-      to these endpoints.
-    tags:
-      - Carts
-      - Currencies
-      - Items
-      - Line
+    name: Storefront Carts
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-carts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/storefront-carts-openapi-api-evangelist-ratings.yml
-    humanURL: https://developer.bigcommerce.com/docs/rest-storefront/carts
   - aid: bigcommerce:carts
-    name: BigCommerce Carts API
-    description: >-
-      Utilize BigCommerce's cart functionality to establish and maintain a cart
-      system within your API, as well as effortlessly manage any settings
-      pertaining to carts.
-    tags:
-      - Carts
-      - Channels
-      - Customers
-      - Global
-      - Items
-      - Line
-      - Metafields
-      - Multiple
-      - Redirects
-      - Settings
-      - URL
+    name: Carts
+    description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/carts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/carts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/carts-openapi-api-evangelist-ratings.yml
-    humanURL: https://developer.bigcommerce.com/docs/rest-management/carts
   - aid: bigcommerce:catalog-categories
-    name: BigCommerce Catalog Categories API
+    name: Catalog - Categories
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-categories-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-categories-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/catalog-categories-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:catalog-category-trees
-    name: BigCommerce Catalog Category Trees API
+    name: Catalog - Category Trees
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-category-trees-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-category-trees-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/catalog-category-trees-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:channels
-    name: BigCommerce Channels API
+    name: Channels
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/channels-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/channels-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/channels-openapi-api-evangelist-ratings.yml
   - aid: bigcommerce:storefront-checkouts
-    name: BigCommerce Storefront Checkouts API
+    name: Storefront Checkouts
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-checkouts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-checkouts-openapi-search.yml
@@ -240,7 +204,15 @@ apis:
   - aid: bigcommerce:checkouts
     name: Checkouts
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/checkouts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/checkouts-openapi-search.yml
@@ -249,7 +221,15 @@ apis:
   - aid: bigcommerce:storefront-cookie-consent
     name: Storefront Cookie Consent
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-cookie-consent-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-cookie-consent-openapi-search.yml
@@ -258,7 +238,15 @@ apis:
   - aid: bigcommerce:currencies
     name: Currencies
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/currencies-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/currencies-openapi-search.yml
@@ -267,7 +255,15 @@ apis:
   - aid: bigcommerce:current-customer
     name: Current Customer
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/current-customer-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/current-customer-openapi-search.yml
@@ -276,7 +272,15 @@ apis:
   - aid: bigcommerce:custom-template-associations
     name: Custom Template Associations
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/custom-template-associations-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/custom-template-associations-openapi-search.yml
@@ -286,7 +290,15 @@ apis:
   - aid: bigcommerce:customer-login-sso
     name: Customer Login (SSO)
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/customer-login-sso-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/customer-login-sso-openapi-search.yml
@@ -295,7 +307,15 @@ apis:
   - aid: bigcommerce:storefront-customers
     name: Storefront Customers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-customers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-customers-openapi-search.yml
@@ -304,7 +324,15 @@ apis:
   - aid: bigcommerce:customers
     name: Customers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/customers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/customers-openapi-search.yml
@@ -313,7 +341,15 @@ apis:
   - aid: bigcommerce:customers
     name: Customers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/customers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/customers-openapi-search.yml
@@ -322,7 +358,15 @@ apis:
   - aid: bigcommerce:email-templates
     name: Email Templates
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/email-templates-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/email-templates-openapi-search.yml
@@ -331,7 +375,15 @@ apis:
   - aid: bigcommerce:storefront-form-fields-beta
     name: Storefront Form Fields (Beta)
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-form-fields-beta-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-form-fields-beta-openapi-search.yml
@@ -341,7 +393,15 @@ apis:
   - aid: bigcommerce:geography
     name: Geography
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/geography-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/geography-openapi-search.yml
@@ -350,7 +410,15 @@ apis:
   - aid: bigcommerce:marketing
     name: Marketing
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/marketing-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/marketing-openapi-search.yml
@@ -359,7 +427,15 @@ apis:
   - aid: bigcommerce:payment-methods-deprecated
     name: Payment Methods (Deprecated)
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/payment-methods-deprecated-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/payment-methods-deprecated-openapi-search.yml
@@ -368,7 +444,15 @@ apis:
   - aid: bigcommerce:storefront-orders
     name: Storefront Orders
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-orders-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-orders-openapi-search.yml
@@ -377,7 +461,15 @@ apis:
   - aid: bigcommerce:orders
     name: Orders
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/orders-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/orders-openapi-search.yml
@@ -386,7 +478,15 @@ apis:
   - aid: bigcommerce:orders
     name: Orders
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/orders-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/orders-openapi-search.yml
@@ -395,7 +495,15 @@ apis:
   - aid: bigcommerce:pages
     name: Pages
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/pages-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/pages-openapi-search.yml
@@ -404,7 +512,15 @@ apis:
   - aid: bigcommerce:price-lists
     name: Price Lists
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/price-lists-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/price-lists-openapi-search.yml
@@ -413,7 +529,15 @@ apis:
   - aid: bigcommerce:pricing
     name: Pricing
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/pricing-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/pricing-openapi-search.yml
@@ -422,7 +546,15 @@ apis:
   - aid: bigcommerce:payment-processing
     name: Payment Processing
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/payment-processing-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/payment-processing-openapi-search.yml
@@ -431,7 +563,15 @@ apis:
   - aid: bigcommerce:catalog-product-modifiers
     name: Catalog - Product Modifiers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-product-modifiers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-product-modifiers-openapi-search.yml
@@ -440,7 +580,15 @@ apis:
   - aid: bigcommerce:catalog-product-variant-options
     name: Catalog - Product Variant Options
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-product-variant-options-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-product-variant-options-openapi-search.yml
@@ -450,7 +598,15 @@ apis:
   - aid: bigcommerce:catalog-product-variants
     name: Catalog - Product Variants
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-product-variants-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-product-variants-openapi-search.yml
@@ -459,7 +615,15 @@ apis:
   - aid: bigcommerce:catalog-products
     name: Catalog - Products
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/catalog-products-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/catalog-products-openapi-search.yml
@@ -468,7 +632,15 @@ apis:
   - aid: bigcommerce:redirects
     name: Redirects
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/redirects-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/redirects-openapi-search.yml
@@ -477,7 +649,15 @@ apis:
   - aid: bigcommerce:scripts
     name: Scripts
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/scripts-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/scripts-openapi-search.yml
@@ -486,7 +666,15 @@ apis:
   - aid: bigcommerce:settings
     name: Settings
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/settings-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/settings-openapi-search.yml
@@ -495,7 +683,15 @@ apis:
   - aid: bigcommerce:shipping
     name: Shipping
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/shipping-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/shipping-openapi-search.yml
@@ -504,7 +700,15 @@ apis:
   - aid: bigcommerce:shipping
     name: Shipping
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/shipping-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/shipping-openapi-search.yml
@@ -513,7 +717,15 @@ apis:
   - aid: bigcommerce:shipping-providers
     name: Shipping Providers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/shipping-providers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/shipping-providers-openapi-search.yml
@@ -522,7 +734,15 @@ apis:
   - aid: bigcommerce:sites
     name: Sites
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/sites-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/sites-openapi-search.yml
@@ -531,7 +751,15 @@ apis:
   - aid: bigcommerce:content
     name: Content
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/content-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/content-openapi-search.yml
@@ -540,7 +768,15 @@ apis:
   - aid: bigcommerce:store-information
     name: Store Information
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/store-information-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/store-information-openapi-search.yml
@@ -549,7 +785,15 @@ apis:
   - aid: bigcommerce:store-logs
     name: Store Logs
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/store-logs-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/store-logs-openapi-search.yml
@@ -558,7 +802,15 @@ apis:
   - aid: bigcommerce:storefront-token
     name: Storefront Token
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-token-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-token-openapi-search.yml
@@ -567,7 +819,15 @@ apis:
   - aid: bigcommerce:subscribers
     name: Subscribers
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/subscribers-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/subscribers-openapi-search.yml
@@ -576,7 +836,15 @@ apis:
   - aid: bigcommerce:storefront-subscriptions
     name: Storefront Subscriptions
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/storefront-subscriptions-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/storefront-subscriptions-openapi-search.yml
@@ -585,7 +853,15 @@ apis:
   - aid: bigcommerce:tax-provider-connection
     name: Tax Provider Connection
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-provider-connection-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-provider-connection-openapi-search.yml
@@ -594,7 +870,15 @@ apis:
   - aid: bigcommerce:tax-classes
     name: Tax Classes
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-classes-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-classes-openapi-search.yml
@@ -603,7 +887,15 @@ apis:
   - aid: bigcommerce:tax-properties
     name: Tax Properties
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-properties-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-properties-openapi-search.yml
@@ -612,7 +904,15 @@ apis:
   - aid: bigcommerce:tax-provider
     name: Tax Provider
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-provider-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-provider-openapi-search.yml
@@ -621,7 +921,15 @@ apis:
   - aid: bigcommerce:tax-rates-zones
     name: Tax Rates & Zones
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-rates-zones-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-rates-zones-openapi-search.yml
@@ -630,7 +938,15 @@ apis:
   - aid: bigcommerce:tax-settings
     name: Tax Settings
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-settings-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-settings-openapi-search.yml
@@ -639,7 +955,15 @@ apis:
   - aid: bigcommerce:tax-zone-check
     name: Tax Zone Check
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/tax-zone-check-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/tax-zone-check-openapi-search.yml
@@ -648,7 +972,15 @@ apis:
   - aid: bigcommerce:themes
     name: Themes
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/themes-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/themes-openapi-search.yml
@@ -657,7 +989,15 @@ apis:
   - aid: bigcommerce:webhooks-v3
     name: Webhooks v3
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/webhooks-v3-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/webhooks-v3-openapi-search.yml
@@ -666,7 +1006,15 @@ apis:
   - aid: bigcommerce:widgets
     name: Widgets
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/widgets-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/widgets-openapi-search.yml
@@ -675,15 +1023,52 @@ apis:
   - aid: bigcommerce:wishlist
     name: Wishlist
     description: Needs a description
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.bigcommerce.com/
+    baseURL: https://api.example.com
     tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.bigcommerce.com/
+      - type: OpenAPI
+        url: properties/wishlist-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/wishlist-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/wishlist-openapi-api-evangelist-ratings.yml
+common:
+  - type: API Specs
+    url: https://github.com/bigcommerce/api-specs/tree/main
+  - type: Portal
+    url: https://developer.bigcommerce.com/
+  - type: Getting Started
+    url: https://developer.bigcommerce.com/docs/start
+  - type: Change Log
+    url: https://developer.bigcommerce.com/release-notes
+  - type: SDKs
+    url: https://developer.bigcommerce.com/tools-resources
+  - type: Slack
+    url: https://forms.gle/Q8cuoM7WfU3QE8a7A
+  - type: Discord
+    url: https://discord.gg/qzGDFDXc4w
+  - type: GitHub Organization
+    url: https://github.com/bigcommerce
+  - type: YouTube
+    url: https://www.youtube.com/c/bigcommerce
+  - type: Status
+    url: https://status.bigcommerce.com/
+  - type: Support
+    url: https://support.bigcommerce.com/
+  - type: Terms of Service
+    url: https://www.bigcommerce.com/terms/api-terms/
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
     email: info@apievangelist.com
-
+overlays:
+  - type: APIs.io Search
+    url: overlays/apis-io-search.yml
+  - type: API Evangelist Ratings
+    url: overlays/apis-io-search.yml
 ---
