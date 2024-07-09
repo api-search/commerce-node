@@ -5,9 +5,10 @@ description: >-
   benefit of REST is that it uses less bandwidth and supports multiple formats
   including plain text, XML, HTML, and JSON while SOAP only supports XML.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/commerce/main/_data/ebay/overlays/apis-io-search.yml
+url: >-
+  https://raw.githubusercontent.com/api-search/commerce/main/_data/ebay/overlays/apis-io-search.yml
 created: 2023/11/9
-modified: '2024-07-03'
+modified: '2024-07-09'
 specificationVersion: '0.18'
 tags:
   - Commerce
@@ -21,13 +22,42 @@ apis:
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://developer.ebay.com/api-docs/sell/account/static/overview.html
     baseURL: https://api.example.com
-    tags: []
+    tags:
+      - Custom
+      - Policies
+      - Fulfillment
+      - Names
+      - Payments
+      - Marketplace
+      - Program
+      - Types
+      - Onboarding
+      - Privilege
+      - Opted
+      - Programs
+      - Opt
+      - Out
+      - Rates
+      - Tables
+      - Code
+      - Countries
+      - Jurisdiction
+      - Sales
+      - Taxes
+      - Subscriptions
+      - Kyc
+      - Advertising
+      - Eligibility
     properties:
       - type: Documentation
         url: https://developer.ebay.com/api-docs/sell/account/static/overview.html
       - type: OpenAPI
         url: properties/ebay-account-openapi-original.yml
     aid: ebay:ebay-account-api
+    score: 1297
+    overlays:
+      - type: API Evangelist Ratings
+        url: overlays/ebay-account-openapi-api-evangelist-ratings.yml
   - name: Analytics API
     description: >-
       Provides information about an individual seller’s business performance
@@ -51,13 +81,20 @@ apis:
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://developer.ebay.com/api-docs/sell/compliance/resources/methods
     baseURL: https://api.example.com
-    tags: []
+    tags:
+      - Listings
+      - Summaries
+      - Violations
     properties:
       - type: Documentation
         url: https://developer.ebay.com/api-docs/sell/compliance/resources/methods
       - type: OpenAPI
         url: properties/ebay-compliance-openapi-original.yml
     aid: ebay:compliance-api
+    score: 153
+    overlays:
+      - type: API Evangelist Ratings
+        url: overlays/ebay-compliance-openapi-api-evangelist-ratings.yml
   - name: Feed API
     description: >-
       Manage your eBay business by downloading or uploading inventory, order,
@@ -68,13 +105,30 @@ apis:
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://developer.ebay.com/api-docs/sell/feed/resources/methods
     baseURL: https://api.example.com
-    tags: []
+    tags:
+      - Orders
+      - Tasks
+      - Inventory
+      - Schedules
+      - Downloads
+      - Files
+      - Results
+      - Templates
+      - Inputs
+      - Uploads
+      - Customers
+      - Metrics
+      - Services
     properties:
       - type: Documentation
         url: https://developer.ebay.com/api-docs/sell/feed/resources/methods
       - type: OpenAPI
         url: properties/ebay-feed-openapi-original.yml
     aid: ebay:feed-api
+    score: 1068
+    overlays:
+      - type: API Evangelist Ratings
+        url: overlays/ebay-feed-openapi-api-evangelist-ratings.yml
   - name: Browse API
     description: >-
       Using the Browse API, you can create a rich selection of items for your
