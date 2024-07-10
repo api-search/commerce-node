@@ -8,7 +8,7 @@ description: >-
 url: >-
   https://raw.githubusercontent.com/api-search/commerce/main/_data/bigcommerce/overlays/apis-io-search.yml
 created: 2024/04/14
-modified: '2024-07-09'
+modified: '2024-07-10'
 specificationVersion: '0.18'
 tags:
   - Commerce
