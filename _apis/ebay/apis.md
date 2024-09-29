@@ -1,4 +1,3 @@
----
 name: eBay
 description: >-
   eBay offers developers a wide range of RESTful and Traditional APIs. For new
@@ -378,7 +377,7 @@ apis:
         url: properties/ebay-stores-openapi-original.yml
       - type: Release Notes
         url: https://developer.ebay.com/api-docs/sell/stores/release-notes.html
-    aid: ebay:stores-api
+    aid: ebay:recommendation-api
   - name: Catalog API
     description: >-
       The Catalog API allows users to search for and locate an eBay catalog
@@ -524,7 +523,7 @@ apis:
       - type: Release Notes
         url: >-
           https://developer.ebay.com/api-docs/commerce/translation/release-notes.html
-    aid: ebay:translation-api
+    aid: ebay:taxonomy-api
   - name: Client Registration API
     description: >-
       The Client Registration API provides Dynamic Client Registration for
@@ -606,5 +605,3 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: ebay
-
----

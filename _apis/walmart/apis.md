@@ -1,11 +1,11 @@
----
 name: Walmart
 description: >-
   Walmart Inc. is an American multinational retail corporation that operates a
   chain of hypermarkets, discount department stores, and grocery stores in the
   United States, headquartered in Bentonville, Arkansas.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/walmart/apis.md
+url: >-
+  https://raw.githubusercontent.com/api-search/commerce/main/_apis/walmart/apis.md
 created: 2023/11/15
 modified: '2024-07-03'
 specificationVersion: '0.18'
@@ -35,7 +35,7 @@ apis:
         url: https://developer.walmart.com/api/us/mp/feeds
       - type: OpenAPI
         url: properties/walmart-marketplace-feeds-openapi-original.yml
-    aid: walmart:walmart-feeds-api
+    aid: walmart:walmart-marketplace-feeds-api
   - name: Walmart Marketplace Items API
     description: >-
       The Item Management APIs enable you to set up and manage items on
@@ -66,7 +66,7 @@ apis:
         url: properties/walmart-marketplace-items-openapi-original.yml
       - type: Documentation
         url: https://developer.walmart.com/api/us/mp/items
-    aid: walmart:walmart-items-api
+    aid: walmart:walmart-marketplace-items-api
   - name: Walmart Marketplace Prices API
     description: >-
       The price is a fundamental building block for your listing on Walmart.com.
@@ -98,7 +98,7 @@ apis:
         url: https://developer.walmart.com/api/us/mp/price
       - type: OpenAPI
         url: properties/walmart-marketplace-prices-openapi-original.yml
-    aid: walmart:walmart-prices-api
+    aid: walmart:walmart-marketplace-prices-api
   - name: Walmart Promotions API
     description: >-
       Sellers can set regular or promotional prices for their items. Setting the
@@ -120,7 +120,7 @@ apis:
       - type: OpenAPI
         url: properties/walmart-marketplace-promotions-openapi-original.yml
     overlays: []
-    aid: walmart:walmart-promotion-api
+    aid: walmart:walmart-promotions-api
   - name: Walmart Orders API
     description: >-
       The Walmart Order Management APIs help Sellers to manage customer’s Sales
@@ -145,7 +145,7 @@ apis:
       - type: OpenAPI
         url: properties/walmart-marketplace-orders-openapi-original.yml
     overlays: []
-    aid: walmart:walmart-order-api
+    aid: walmart:walmart-orders-api
   - name: Walmart Returns API
     description: >-
       Buyers can now Initiate Returns from Walmart.com for Marketplace seller
@@ -373,7 +373,7 @@ apis:
         url: >-
           properties/walmart-dropship-vendor-pre-generated-reports-openapi-original.yml
     overlays: []
-    aid: walmart:walmart-dropship-vendor-pre-generated-reports-api
+    aid: walmart:walmart-dropship-vendor-orders-api
   - name: Walmart Marketplace Authentication API
     description: >-
       Authentication creates and manages access tokens to ensure users are
@@ -793,5 +793,3 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: walmart
-
----

@@ -1,11 +1,11 @@
----
 name: Shopify
 description: >-
   Shopify is a popular e-commerce website builder that small businesses can use
   to build online stores or sell products on third-party marketplaces or social
   media platforms. Shopify also sells point-of-sale, or POS, software that small
   businesses can use in their brick-and-mortar stores.
-url: https://raw.githubusercontent.com/api-search/commerce/main/_apis/shopify/apis.md
+url: >-
+  https://raw.githubusercontent.com/api-search/commerce/main/_apis/shopify/apis.md
 created: 2024/04/14
 modified: '2024-07-03'
 specificationVersion: '0.18'
@@ -34,5 +34,3 @@ maintainers:
     url: http://apievangelist.com
     email: info@apievangelist.com
 aid: shopify
-
----
