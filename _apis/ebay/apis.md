@@ -1,3 +1,4 @@
+---
 name: eBay
 description: >-
   eBay offers developers a wide range of RESTful and Traditional APIs. For new
@@ -605,3 +606,4 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: ebay
+---

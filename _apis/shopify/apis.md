@@ -1,3 +1,4 @@
+---
 name: Shopify
 description: >-
   Shopify is a popular e-commerce website builder that small businesses can use
@@ -34,3 +35,4 @@ maintainers:
     url: http://apievangelist.com
     email: info@apievangelist.com
 aid: shopify
+---

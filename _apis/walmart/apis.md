@@ -1,3 +1,4 @@
+---
 name: Walmart
 description: >-
   Walmart Inc. is an American multinational retail corporation that operates a
@@ -793,3 +794,4 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: walmart
+---

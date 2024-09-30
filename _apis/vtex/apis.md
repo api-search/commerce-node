@@ -1,3 +1,4 @@
+---
 name: VTex
 description: >-
   VTEX enables brands and retailers to achieve faster time to market, reach
@@ -576,3 +577,4 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: vtex
+---
